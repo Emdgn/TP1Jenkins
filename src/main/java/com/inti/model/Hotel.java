@@ -18,5 +18,14 @@ public class Hotel {
 	private int idHotel;
 	private String nom;
 	private int nbEtoile;
+	
+	
+	public Hotel(String nom, int nbEtoile) {
+		super();
+		this.nom = nom;
+		this.nbEtoile = nbEtoile;
+	}
+	
+	
 
 }

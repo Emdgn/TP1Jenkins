@@ -33,6 +33,11 @@ public class Reservation {
 	@JoinColumn(name = "idHotel")
 	private Hotel hotel;
 	
+	@Exclude
+	@ManyToOne
+	@JoinColumn(name = "idClient")
+	private Voyageur voyageur;
+	
 	
 	public Reservation(@NonNull LocalDate dateReservation, int nbJours) {
 		super();

@@ -20,4 +20,5 @@ public interface IReservationRepository extends JpaRepository<Reservation, Integ
 	@Modifying
 	@Query(value = "update reservation set id_hotel = :idHotel where id_voyageur = :idVoyageur", nativeQuery = true)
 	void insertIdHotel(@Param("idHotel") int idHotel, @Param("idVoyageur") int idVoyageur);
+
 }

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.inti.model.Hotel;
 import com.inti.repository.IHotelRepository;
@@ -24,8 +25,11 @@ public class HotelController {
 	}
 
 	@PostMapping("enregistrerHotel")
-	public String enregistrerHotel(@ModelAttribute("hotel") Hotel hotel) {
+	public String enregistrerHotel(@ModelAttribute("hotel") Hotel hotel, @RequestParam("ville") String ville) {
+		
 		ihr.save(hotel);
+		ihr.insertIdDestination(hotel.getIdHotel(), ihr.returnIdVille(ville));
+		
 		return "enregistrerHotel";
 	}
 

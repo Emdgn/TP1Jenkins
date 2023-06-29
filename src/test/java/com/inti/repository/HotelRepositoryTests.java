@@ -49,7 +49,7 @@ public class HotelRepositoryTests {
 		assertThat(hotelSaved).isNotNull();
 		assertThat(hotelSaved.getIdHotel()).isGreaterThan(0);
 		assertThat(hotelSaved.getNom()).isEqualTo("Hotel1");
-		assertThat(hotelSaved.getNbEtoile()).isNull();
+		assertThat(hotelSaved.getNbEtoile()).isEqualTo(0);
 	}
 	
 	@Test

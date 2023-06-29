@@ -21,7 +21,7 @@ import com.inti.model.Hotel;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
-@AutoConfigureTestDatabase(replace = Replace.NONE)
+//@AutoConfigureTestDatabase(replace = Replace.NONE) //utilise bdd
 public class HotelRepositoryTests {
 
 	@Autowired
@@ -97,21 +97,21 @@ public class HotelRepositoryTests {
 		assertThat(ihr.getReferenceById(hotel.getIdHotel())).isEqualTo(hotel);
 	}
 	
-//	@Test
-//	public void afficherListehotel() {
-//		Hotel h1 = new Hotel();
-//		Hotel h2 = new Hotel();
-//		Hotel h3 = new Hotel();
-//		
-//		ihr.save(h1);
-//		ihr.save(h2);
-//		ihr.save(h3);
-//		
-//		List<Hotel> listeHotel = List.of(h1, h2, h3);
-//		
-//		assertThat(ihr.findAll()).isEqualTo(listeHotel);
-//		assertThat(ihr.findAll().get(0)).isEqualTo(h1);
-//	}
+	@Test
+	public void afficherListehotel() {
+		Hotel h1 = new Hotel();
+		Hotel h2 = new Hotel();
+		Hotel h3 = new Hotel();
+		
+		Hotel h1saved = ihr.save(h1);
+		Hotel h2saved = ihr.save(h2);
+		Hotel h3saved = ihr.save(h3);
+		
+		List<Hotel> listeHotel = List.of(h1saved, h2saved, h3saved);
+		
+		assertThat(ihr.findAll()).isEqualTo(listeHotel);
+		assertThat(ihr.findAll().get(0)).isEqualTo(h1saved);
+	}
 	
 	
 }

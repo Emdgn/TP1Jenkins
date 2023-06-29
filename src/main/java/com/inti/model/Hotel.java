@@ -11,6 +11,7 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString.Exclude;
 
 @Entity @Table
 @Data @NoArgsConstructor @AllArgsConstructor
@@ -22,6 +23,7 @@ public class Hotel {
 	private String nom;
 	private int nbEtoile;
 	
+	@Exclude
 	@OneToMany(mappedBy = "hotel")
 	private List<Reservation> listeReservation;
 	

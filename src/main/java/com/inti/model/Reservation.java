@@ -14,6 +14,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.ToString.Exclude;
 
 @Entity @Table
 @Data @NoArgsConstructor @AllArgsConstructor
@@ -27,6 +28,7 @@ public class Reservation {
 	private LocalDate dateReservation;
 	private int nbJours;
 	
+	@Exclude
 	@ManyToOne
 	@JoinColumn(name = "idHotel")
 	private Hotel hotel;

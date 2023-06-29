@@ -32,5 +32,11 @@ public class ReservationRepositoryTests {
 		assertThat(reservationSaved).isNotNull();
 		assertThat(reservationSaved.getIdVoyageur()).isGreaterThan(0);
 	}
+	
+	
+	@Test
+	public void saveReservationArgsObligatoire() {
+		Reservation reservation = new Reservation();
+	}
 
 }

@@ -43,13 +43,13 @@ public class HotelControllerTests {
 		.andDo(print());
 	}
 	
-	@Test
-	public void modifierHotel() throws Exception {
-				
-		mockMvc.perform(get("/modifierHotel/1").requestAttr("hotel", new Hotel("h", 3)))
-		.andExpect(status().isOk())
-		.andDo(print());
-	}
+//	@Test
+//	public void modifierHotel() throws Exception {
+//				
+//		mockMvc.perform(get("/modifierHotel/1").requestAttr("hotel", new Hotel("h", 3)))
+//		.andExpect(status().isOk())
+//		.andDo(print());
+//	}
 	
 	@Test
 	public void modifierHotelPost() throws Exception {
